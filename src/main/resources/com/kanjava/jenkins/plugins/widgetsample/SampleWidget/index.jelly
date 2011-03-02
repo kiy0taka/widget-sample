@@ -1,0 +1,15 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form" xmlns:i="jelly:fmt">
+  <l:pane width="2" title="Kan Java Tweets">
+    <j:forEach var="t" items="${it.tweets}">
+      <tr>
+        <td align="center" class="pane">
+          <a href="http://twitter.com/${t.fromUser}"><img src="${t.profileImageUrl}"/></a><br/>
+          <a href="http://twitter.com/${t.fromUser}">${t.fromUser}</a><br/>
+        </td>
+        <td class="pane">
+          <pre>${t.text}</pre>
+        </td>
+      </tr>
+    </j:forEach>
+  </l:pane>
+</j:jelly>
